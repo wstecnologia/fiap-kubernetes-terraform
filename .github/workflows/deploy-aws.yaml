@@ -1,11 +1,11 @@
 name: Deploy AWS Academy - EKS
 
 on:
-  push:
+  pull_request:
     branches:
-      - develop
       - main
-
+    paths:
+      - develop
 env:
   REGION_DEFAULT: "us-east-1"
   CLUSTER_NAME: "EKS_WSTECH"
