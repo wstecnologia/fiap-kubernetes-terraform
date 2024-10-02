@@ -34,3 +34,4 @@ override.tf.json
 
 .github/workflows/deploy-aws.yamlold
 *.pem
+vockey.pem
