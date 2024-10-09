@@ -1,11 +1,9 @@
-name: Deploy AWS Academy - EKS
+name: Deploy AWS EKS
 
 on:
   pull_request:
     branches:
       - main
-    paths:
-      - develop
 env:
   RELEASE_NAME: "lanchonetews"
   NAMESPACE: "default"
