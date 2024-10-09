@@ -1,5 +1,5 @@
 variable "region_default" {
-  description = "A região padrão para o AWS"
+  description = "A região padrão para a AWS"
   type        = string
   default     = "us-east-1"
 }
@@ -16,8 +16,10 @@ variable "namespace" {
   default     = "default"
 }
 
-variable "release_name" {
-  description = "Nome do release do Helm"
-  type        = string
-  default     = "lanchonetews"
+variable "nodeGroup" {
+  default = "fiap"
+}
+
+variable "instanceType" {
+  default = "t3.medium"
 }
