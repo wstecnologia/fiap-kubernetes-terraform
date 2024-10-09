@@ -7,6 +7,7 @@ on:
 env:
   RELEASE_NAME: "lanchonetews"
   NAMESPACE: "default"
+  CLUSTER_NAME: "EKS_WSTECH"
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
@@ -33,9 +34,17 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
+          -var "cluster_name=${{ env.CLUSTER_NAME }}"
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+
+      - name: Atualizar kubeconfig para EKS
+        run: |
+          aws eks update-kubeconfig --region us-west-2 --name ${{ env.CLUSTER_NAME }}
+
+      - name: Verificar Conexão com Kubernetes
+        run: kubectl cluster-info
 
       - name: Helm Install or Upgrade
         run: |

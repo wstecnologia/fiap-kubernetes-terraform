@@ -26,8 +26,8 @@ lanchonetews:
   env:
     dbHost: postgresql
     dbPort: 5432
-    dbUser: admin
-    dbPassword: admin@123
-    dbName: lanchonete_ws
+    dbUser: dbadmin
+    dbPassword: lanchonetews
+    dbName: lanchonetews
 
 resources: {}
