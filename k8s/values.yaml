@@ -15,11 +15,5 @@ lanchonetews:
   env:
     host: "http://lanchonetews:3000/api/payment-status"
     port: "3001"
-  db:
-    dbHost: ${{secrets.DB_HOST}}
-    dbPort: ${{secrets.DB_PORT}}
-    dbUser: ${{secrets.DB_USER}}
-    dbPassword: ${{secrets.DB_PASSWORD}}
-    database: ${{secrets.DATABASE}}
 
 resources: {}
