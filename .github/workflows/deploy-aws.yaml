@@ -30,12 +30,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: terraform/
 
       - name: Terraform Validate
         run: terraform validate
+        working-directory: terraform/
 
       - name: Terraform Plan
         run: terraform plan -var "cluster_name=${{ env.CLUSTER_NAME }}"
+        working-directory: terraform/
 
       - name: Debug AWS CLI
         run: |
