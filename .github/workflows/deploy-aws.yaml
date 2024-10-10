@@ -62,6 +62,7 @@ jobs:
       - name: Terraform Apply
         if: steps.check_cluster.outputs.exists == 'false'
         run: terraform apply -auto-approve -var "cluster_name=${{ env.CLUSTER_NAME }}"
+        working-directory: terraform/
 
       - name: Install Helm
         run: |
