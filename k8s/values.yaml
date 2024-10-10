@@ -9,25 +9,17 @@ service:
   type: NodePort
   port: 3000
 
-postgresql:
-  image: postgres:latest
-  port: 5432
-  secret:
-    name: postgresql-secret
-  pvc:
-    storage: 1Gi
-
-sqlRunner:
-  image: postgres:latest
-
 lanchonetews:
   service:
     port: 3000
   env:
-    dbHost: postgresql
-    dbPort: 5432
-    dbUser: dbadmin
-    dbPassword: lanchonetews
-    dbName: lanchonetews
+    host: "http://lanchonetews:3000/api/payment-status"
+    port: "3001"
+  db:
+    dbHost: ${{secrets.DB_HOST}}
+    dbPort: ${{secrets.DB_PORT}}
+    dbUser: ${{secrets.DB_USER}}
+    dbPassword: ${{secrets.DB_PASSWORD}}
+    database: ${{secrets.DATABASE}}
 
 resources: {}

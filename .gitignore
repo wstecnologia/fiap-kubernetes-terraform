@@ -1,35 +1,26 @@
-# Ignore arquivos de estado e planos de execução do Terraform
 *.tfstate
 *.tfstate.*
 
-# Ignore os arquivos de backup de estado gerados pelo Terraform
 *.backup
 
-# Ignore o arquivo de log de execução do Terraform
 .terraform.rc
 .terraform.lock.hcl
 terraform/.terraform/providers/
 
-# Ignore os diretórios .terraform que contêm o cache e os módulos baixados
 .terraform/
 
-# Ignore arquivos de plano de execução gerados pelo Terraform
 *.tfplan
 
-## Ignore arquivos de variáveis sensíveis, como as chaves de acesso
 *.tfvars
 *.tfvars.json
 
-# Ignore arquivos de saída de crash do Terraform
 crash.log
 
-# Ignore arquivos de override e configuração local
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Ignore a configuração de workspace local do Terraform
 .terraform-workspace
 
 .github/workflows/deploy-aws.yamlold
