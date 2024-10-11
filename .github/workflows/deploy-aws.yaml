@@ -84,8 +84,8 @@ jobs:
             --set db.dbUser="${{ secrets.DB_USER }}" \
             --set db.dbPassword="${{ secrets.DB_PASSWORD }}" \
             --set db.database="${{ secrets.DATABASE }}" \
-            --set db.host= "${{env.HOST}}" \
-            --set db.port= "${{env.PORT}}" 
+            --set db.host="${{env.HOST}}" \
+            --set db.port="${{env.PORT}}" 
             else
             echo "Release ${{ env.RELEASE_NAME }} does not exist. Installing..."
             helm install --dry-run ${{ env.RELEASE_NAME }} k8s/ --namespace ${{ env.NAMESPACE }} \
@@ -94,6 +94,6 @@ jobs:
             --set db.dbUser="${{ secrets.DB_USER }}" \
             --set db.dbPassword="${{ secrets.DB_PASSWORD }}" \
             --set db.database="${{ secrets.DATABASE }}" \
-            --set db.host= "${{env.HOST}}" \
-            --set db.port= "${{env.PORT}}"
+            --set db.host="${{env.HOST}}" \
+            --set db.port="${{env.PORT}}"
           fi
