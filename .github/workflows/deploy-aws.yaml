@@ -10,8 +10,8 @@ env:
   NAMESPACE: "default"
   CLUSTER_NAME: "EKS_WSTECH"
   REGION_DEFAULT: "us-east-1"
-  URL_WH: "http://lanchonetews:3000/api/payment-status"
-  PORT_WH: "3001"
+  URL_WH: http://lanchonetews:3000/api/payment-status
+  PORT_WH: 3001
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
