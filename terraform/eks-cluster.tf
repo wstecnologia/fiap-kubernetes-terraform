@@ -4,7 +4,7 @@ resource "aws_eks_cluster" "eks-cluster" {
 
   vpc_config {
     subnet_ids         = [for subnet in data.aws_subnet.subnet : subnet.id if subnet.availability_zone != "${var.region_default}e"]
-    security_group_ids = [aws_security_group.security-group.id]
+    security_group_ids = [local.security_group_id]
   }
 
   tags = {

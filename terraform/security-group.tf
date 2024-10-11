@@ -1,4 +1,6 @@
 resource "aws_security_group" "security-group" {
+  count = length(data.aws_security_group.existing_sg.id) == 0 ? 1 : 0
+  
   name        = "SG=${var.cluster_name}"
   description = "Usando EKS com terraform"
   vpc_id      = data.aws_vpc.vpc.id
