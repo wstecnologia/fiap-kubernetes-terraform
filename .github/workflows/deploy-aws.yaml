@@ -10,6 +10,8 @@ env:
   NAMESPACE: "default"
   CLUSTER_NAME: "EKS_WSTECH"
   REGION_DEFAULT: "us-east-1"
+  HOST: "http://lanchonetews:3000/api/payment-status"
+  PORT: "3001"
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
@@ -82,7 +84,9 @@ jobs:
             --set db.dbUser="${{ secrets.DB_USER }}" \
             --set db.dbPassword="${{ secrets.DB_PASSWORD }}" \
             --set db.database="${{ secrets.DATABASE }}"
-          else
+            --set db.host= "${{env.HOST}}"
+            --set db.port= "${{env.PORT}}"
+            else
             echo "Release ${{ env.RELEASE_NAME }} does not exist. Installing..."
             helm install --dry-run ${{ env.RELEASE_NAME }} k8s/ --namespace ${{ env.NAMESPACE }} \
             --set db.dbHost="${{ secrets.DB_HOST }}" \
@@ -90,4 +94,6 @@ jobs:
             --set db.dbUser="${{ secrets.DB_USER }}" \
             --set db.dbPassword="${{ secrets.DB_PASSWORD }}" \
             --set db.database="${{ secrets.DATABASE }}"
+            --set db.host= "${{env.HOST}}"
+            --set db.port= "${{env.PORT}}"
           fi
