@@ -73,6 +73,15 @@ jobs:
       - name: Update kubeconfig for EKS
         run: |
           aws eks update-kubeconfig --name ${{ env.CLUSTER_NAME }} --region ${{ env.REGION_DEFAULT }}
+          - name: Debug Helm Values
+          run: |
+            echo "DB_HOST: ${{ secrets.DB_HOST }}"
+            echo "DB_PORT: ${{ secrets.DB_PORT }}"
+            echo "DB_USER: ${{ secrets.DB_USER }}"
+            echo "DB_PASSWORD: ${{ secrets.DB_PASSWORD }}"
+            echo "DATABASE: ${{ secrets.DATABASE }}"
+            echo "URL_WH: ${{ env.URL_WH }}"
+            echo "PORT_WH: ${{ env.PORT_WH }}"
 
       - name: Helm Install or Upgrade
         run: |
