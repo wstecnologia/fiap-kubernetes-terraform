@@ -3,11 +3,11 @@ kind: ConfigMap
 metadata:
   name: lanchonetews-config
 data:
-  DB_DATABASE: {{ .Values.db.database }}
-  DB_PORT: {{ .Values.db.dbPort }}
-  DB_USER: {{ .Values.db.dbUser }}
-  DB_PASSWORD: {{ .Values.db.dbPassword }}
-  DB_HOST: {{ .Values.db.dbHost }}
-  HOST: {{ .Values.port }}
-  PORT: {{ .Values.host }}
+  DB_DATABASE: "{{ .Values.db.database }}"
+  DB_PORT: "{{ .Values.db.dbPort }}"
+  DB_USER: "{{ .Values.db.dbUser }}"
+  DB_PASSWORD: "{{ .Values.db.dbPassword }}"
+  DB_HOST: "{{ .Values.db.dbHost }}"
+  HOST: "{{ .Values.port }}"
+  PORT: "{{ .Values.host }}"
 
