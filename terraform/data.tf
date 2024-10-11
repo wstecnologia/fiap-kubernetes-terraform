@@ -17,3 +17,14 @@ data "aws_subnet" "subnet" {
 data "aws_iam_role" "eks_cluster_role" {
   name = "LabRole"
 }
+
+data "aws_security_group" "existing_sg" {
+  filter {
+    name   = "group-name"
+    values = ["SG=${var.cluster_name}"]
+  }
+
+  vpc_id = data.aws_vpc.vpc.id
+
+ 
+}
