@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: lanchonetews
   tag: latest
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 service:
   type: NodePort
