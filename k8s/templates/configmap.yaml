@@ -9,5 +9,5 @@ data:
     DB_USER: {{ .Values.db.dbUser }}
     DB_PASSWORD: {{ .Values.db.dbPassword }}
     DB_HOST: {{ .Values.db.dbHost }}
-    HOST: {{ .Values.env.host}} 
-    PORT: {{ .Values.env.port}}
+    HOST: "http://lanchonetews:3000/api/payment-status" 
+    PORT: "3001"

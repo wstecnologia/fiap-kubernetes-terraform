@@ -76,7 +76,7 @@ jobs:
         run: |
           if helm ls --namespace "${{ env.NAMESPACE }}" --filter "^${{ env.RELEASE_NAME }}$" | grep "${{ env.RELEASE_NAME }}"; then
             echo "Release ${{ env.RELEASE_NAME }} exists. Upgrading..."
-            helm upgrade ${{ env.RELEASE_NAME }} k8s/ --namespace ${{ env.NAMESPACE }} \
+            helm upgrade --dry-run ${{ env.RELEASE_NAME }} k8s/ --namespace ${{ env.NAMESPACE }} \
             --set db.dbHost="${{ secrets.DB_HOST }}" \
             --set db.dbPort="${{ secrets.DB_PORT }}" \
             --set db.dbUser="${{ secrets.DB_USER }}" \
@@ -84,7 +84,7 @@ jobs:
             --set db.database="${{ secrets.DATABASE }}"
           else
             echo "Release ${{ env.RELEASE_NAME }} does not exist. Installing..."
-            helm install ${{ env.RELEASE_NAME }} k8s/ --namespace ${{ env.NAMESPACE }} \
+            helm install --dry-run ${{ env.RELEASE_NAME }} k8s/ --namespace ${{ env.NAMESPACE }} \
             --set db.dbHost="${{ secrets.DB_HOST }}" \
             --set db.dbPort="${{ secrets.DB_PORT }}" \
             --set db.dbUser="${{ secrets.DB_USER }}" \

@@ -12,8 +12,5 @@ service:
 lanchonetews:
   service:
     port: 3000
-  env:
-    host: "http://lanchonetews:3000/api/payment-status"
-    port: "3001"
 
 resources: {}
