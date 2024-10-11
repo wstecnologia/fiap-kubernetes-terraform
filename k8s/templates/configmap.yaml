@@ -9,5 +9,5 @@ data:
     DB_USER: {{ .Values.db.dbUser }}
     DB_PASSWORD: {{ .Values.db.dbPassword }}
     DB_HOST: {{ .Values.db.dbHost }}
-    HOST: {{ .Values.db.host }} 
-    PORT: {{ .Values.db.port }}
+    HOST: {{ .Values.port }} 
+    PORT: {{ .Values.host }}

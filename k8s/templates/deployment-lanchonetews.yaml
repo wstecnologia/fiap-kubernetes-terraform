@@ -43,14 +43,4 @@ spec:
                 configMapKeyRef:
                   name: lanchonetews-config
                   key: DB_PORT
-            - name: DB_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: lanchonetews-config
-                  key: DB_PORT
-            - name: DB_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: lanchonetews-config
-                  key: DB_HOST
           periodSeconds: 30
