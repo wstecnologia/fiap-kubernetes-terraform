@@ -5,7 +5,7 @@ variable "region_default" {
 }
 
 variable "cluster_name" {
-  description = "Nome do Cluster EKS"
+  description = "FIAP - Nome do Cluster EKS"
   type        = string
   default     = "EKS_WSTECH"
 }
