@@ -1,5 +1,5 @@
 data "aws_vpc" "vpc" {
-  cidr_block = "172.31.0.0/16"
+  cidr_block = "172.31.0.0/20"
 }
 
 data "aws_subnets" "subnets" {
