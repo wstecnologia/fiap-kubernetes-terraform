@@ -18,13 +18,13 @@ data "aws_iam_role" "eks_cluster_role" {
   name = "LabRole"
 }
 
+
 data "aws_security_group" "existing_sg" {
   filter {
-    name   = "group-name"
-    values = ["SG=${var.cluster_name}"]
+    name   = "group-id"
+    values = [var.security_group_id]
   }
 
   vpc_id = data.aws_vpc.vpc.id
-
  
 }

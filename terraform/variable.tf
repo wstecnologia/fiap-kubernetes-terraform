@@ -23,3 +23,8 @@ variable "nodeGroup" {
 variable "instanceType" {
   default = "t3.medium"
 }
+
+variable "security_group_id" {
+  type = string
+  default = "sg-01796ef36943f91d8"
+}
